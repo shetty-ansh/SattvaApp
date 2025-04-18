@@ -1,0 +1,11 @@
+<div id="Background" (click)="router.navigate(['/journal'])">
+    <div id="Entry">
+        <div id="EntryHeading">
+            {{JournalEntries[selectedEntryIndex].heading}}
+        </div>
+        <div id="EntryDate">{{JournalEntries[selectedEntryIndex].date}}</div>
+        <div id="EntryContent">
+            {{JournalEntries[selectedEntryIndex].content}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,357 @@
+/* :host{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    
+}
+#Background {
+    border-radius: 40px 40px 0px 0px;
+    background-image: url('../../Images/HabitBG.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: fixed;
+}
+#Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    flex-shrink: 0;
+}
+
+#Good-Habits {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    width: 400px;
+    background-color: rgb(208, 252, 212); 
+    padding: 15px;
+    border-radius: 25px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+    color: rgb(31, 45, 26);
+    flex-shrink: 0;
+    direction: rtl;
+}
+#Good-Habit-Name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(37, 90, 50);
+}
+#Name{
+    
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#Goal{
+
+    font-size: 15px;
+    color: rgb(255, 0, 0);
+}
+
+#Streak {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 80px;
+    background-color: rgba(0, 255, 0, 0.2); 
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+#Good {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: calc(100vh - 60px);
+    padding: 20px 0 0 30px;
+    margin-left: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 128, 0, 0.5) transparent;
+    direction: rtl;
+    background-color: transparent;
+
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 128, 0, 0.5);
+        border-radius: 4px;
+    }
+}
+#Controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60%;
+    width: 70px;
+    margin-left: 5px;
+    gap: 10px;
+
+}
+#Broke-Streak {
+    background-color: red;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+#Add-Streak {
+    background-color: green;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+
+    
+}
+
+#Image {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: auto;
+    height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#Image img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    display: block;
+}
+ */
+
+
+ :host{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    
+}
+#Background {
+    padding: 20px;
+}
+#Background img {
+    width: 25%;
+    height: 25%;
+    object-fit: contain;
+    display: block;
+}
+#BackgroundBlur {
+    display: none;
+}
+#Title {
+    color: var(--text-color);
+    font-weight: 300;
+    font-size: 2rem;
+    margin: 0;
+}
+#Habits {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Toggle-Habits {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--glass-border);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+#Toggle-Habits:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+#Good, #Bad {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#Good-Habits, #Bad-Habits {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 16px var(--glass-shadow);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+#Good-Habits:hover, #Bad-Habits:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--glass-shadow);
+}
+#Good-Habit-Name, #Bad-Habit-Name {
+    margin-bottom: 15px;
+}
+#Name {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+}
+#Goal {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 1rem;
+    margin: 0;
+}
+#StreakBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Streak {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+}
+#Controls {
+    display: flex;
+    gap: 10px;
+}
+#Broke-Streak, #Add-Streak {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--glass-border);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Broke-Streak:hover {
+    background: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+}
+#Add-Streak:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+#Image {
+    display: none;
+}
+.fa {
+    font-size: 1.2rem;
+}
+
+
+
+
+/* Bad Habits Styles */
+#Bad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: calc(100vh - 60px);
+    padding: 20px 0 80px 30px;
+    margin-left: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 0, 0, 0.5) transparent;
+    direction: rtl;
+    background-color: transparent;
+    z-index: 2;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 0, 0, 0.5);
+        border-radius: 4px;
+    }
+}
+
+#Bad-Habits {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    width: 400px;
+    background-color: rgb(255, 137, 137); 
+    padding: 15px;
+    border-radius: 25px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+    color: rgb(139, 0, 0);
+    flex-shrink: 0;
+    direction: ltr;
+}
+
+#Bad-Habit-Name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(139, 0, 0);
+}
+
+#Bad #Streak {
+    background-color: rgba(255, 0, 0, 0.2); 
+    color: darkred;
+}
+
+#Bad #Broke-Streak {
+    background-color: darkred;
+}
+
+#Bad #Add-Streak {
+    background-color: darkgreen;
+}
+

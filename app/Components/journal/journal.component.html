@@ -1,0 +1,23 @@
+<div id="Heading">
+    <h1>Your Journal</h1>
+</div>
+
+<div id="Journal">
+    <div id="JournalEntries" *ngFor="let JournalEntry of JournalEntries" routerLink="/entry" (click)="openEntry(JournalEntry)">
+
+        <div id="JournalEntryHeading">
+            <h3>{{JournalEntry.heading}}</h3>
+            <button id="DeleteButton"><span class="fa fa-minus-circle">Delete</span></button>
+        </div>
+
+        <div id="JournalEntryContent">
+            <h4>{{JournalEntry.content}}</h4>
+        </div>
+        
+        <div id="JournalEntryDate">
+            <h5>{{JournalEntry.date}}</h5>
+        </div>
+    </div>
+</div>
+
+
