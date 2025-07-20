@@ -1,0 +1,173 @@
+<!-- <div id="Journal">
+    <div id="JournalCover" *ngIf="!showJournal && showCover">
+        <div class="JournalCoverBox">
+            <div id="CentreText">
+            <div id="JournalText">My Journal</div>
+            <div class="Buttons">
+                <button id="AddEntry" (click)="addEntry()">Add New</button>
+                <button id="OpenJournal" (click)="openJournal()">Open Journal</button>
+            </div>
+        </div>
+        </div>
+        <div class="JournalCoverBox">
+            <div id="JournalForm" *ngIf="showForm">
+                <form id="FormBG" (ngSubmit)="submitEntry()">
+                    <label id="EntryTitle" class="Labels">Title:</label>    
+                    <input type="text" name="title" [(ngModel)]="title" required><br><br>
+
+                    <label id="EntryDesc" class="Labels">Description:</label>
+                    <textarea name="desc" [(ngModel)]="desc"></textarea><br><br>
+
+                    <label id="EntryDate" class="Labels">Date:</label>
+                    <input type="date" name="date" [(ngModel)]="date" required><br><br>
+
+                    <label id="EntryRating" class="Labels">Rating:</label>
+                    <div class="rating-group">
+                        <div *ngFor="let r of ['1','2','3','4','5']" class="rating-box" [class.selected]="rating === r"
+                            (click)="setRating(r)">
+                            {{r}}
+                        </div>
+                    </div>
+
+                    <div id="Controls">
+                        <input id="EntrySave" type="submit" value="Save Entry" (click)="submitEntry()">
+                        <button id="EntryCancel" type="button" (click)="cancelButton()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+   
+    <div id="JournalContainer" *ngIf="showJournal">
+        <div id="JournalEntries" *ngFor="let JournalEntry of entries$()" [routerLink]="['/entry', JournalEntry._id]">
+            <div id="JournalEntryHeading">
+                <h3>{{JournalEntry.title}}</h3>
+                <button id="DeleteButton" (click)="deleteEntry(JournalEntry._id)">
+                    <span class="material-symbols-outlined">
+                        remove
+                    </span>
+                </button>
+            </div>
+
+            <div id="JournalEntryContent">
+                <h4>{{JournalEntry.desc}}</h4>
+            </div>
+
+            <div id="JournalEntryDate">
+                <h5>{{JournalEntry.date | date:'medium'}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+
+ <!-- /////////////////////////////////////////////////// -->
+
+<!-- <div id="Journal">
+  <div id="JournalCover" *ngIf="!showJournal && showCover" class="glass-card">
+    <div class="center-text">
+      <h1>My Journal</h1>
+      <div class="buttons">
+        <button (click)="addEntry()">Add New</button>
+        <button (click)="openJournal()">Open Journal</button>
+      </div>
+    </div>
+
+    <div *ngIf="showForm" class="glass-form">
+      <form (ngSubmit)="submitEntry()">
+        <label>Title:</label>
+        <input type="text" name="title" [(ngModel)]="title" required>
+
+        <label>Description:</label>
+        <textarea name="desc" [(ngModel)]="desc"></textarea>
+
+        <label>Date:</label>
+        <input type="date" name="date" [(ngModel)]="date" required>
+
+        <label>Rating:</label>
+        <div class="rating-group">
+          <div *ngFor="let r of ['1','2','3','4','5']" class="rating-box" 
+               [class.selected]="rating === r"
+               (click)="setRating(r)">
+            {{r}}
+          </div>
+        </div>
+
+        <div class="controls">
+          <input type="submit" value="Save Entry">
+          <button type="button" (click)="cancelButton()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="JournalContainer" *ngIf="showJournal">
+    <div *ngFor="let JournalEntry of entries$()" class="glass-entry" [routerLink]="['/entry', JournalEntry._id]">
+      <div class="entry-header">
+        <h3>{{JournalEntry.title}}</h3>
+        <button (click)="deleteEntry(JournalEntry._id)">
+          <span class="material-symbols-outlined">remove</span>
+        </button>
+      </div>
+      <p>{{JournalEntry.desc}}</p>
+      <small>{{JournalEntry.date | date:'medium'}}</small>
+    </div>
+  </div>
+</div> -->
+
+
+<div id="Journal">
+  <div id="JournalCover" *ngIf="!showJournal && showCover" class="glass-card">
+    <div class="center-text">
+      <h1>My Journal</h1>
+      <div class="buttons">
+        <button (click)="addEntry()">Add New</button>
+        <button (click)="openJournal()">Open Journal</button>
+      </div>
+    </div>
+
+    <div *ngIf="showForm" class="glass-form">
+      <form (ngSubmit)="submitEntry()">
+        <label>Title:</label>
+        <input type="text" name="title" [(ngModel)]="title" required placeholder="Enter your journal title...">
+
+        <label>Description:</label>
+        <textarea name="desc" [(ngModel)]="desc" placeholder="Write your thoughts here..."></textarea>
+
+        <label>Date:</label>
+        <input type="date" name="date" [(ngModel)]="date" required>
+
+        <label>Rating:</label>
+        <div class="rating-group">
+          <div *ngFor="let r of ['1','2','3','4','5']" class="rating-box" 
+               [class.selected]="rating === r"
+               (click)="setRating(r)">
+            {{r}}
+          </div>
+        </div>
+
+        <div class="controls">
+          <input type="submit" value="Save Entry">
+          <button type="button" (click)="cancelButton()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="JournalContainer" *ngIf="showJournal">
+    <div *ngFor="let JournalEntry of entries$()" class="glass-entry" [routerLink]="['/entry', JournalEntry._id]">
+      <div class="entry-header">
+        <h3>{{JournalEntry.title}}</h3>
+        <button (click)="deleteEntry(JournalEntry._id)">
+          <span class="material-symbols-outlined">remove</span>
+        </button>
+      </div>
+      <p>{{JournalEntry.desc}}</p>
+      <small>{{JournalEntry.date | date:'medium'}}</small>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+<div id="Background">
+
+  <div id="Left">
+    <div id="HabitTable">
+      <div id="HabitsScroll" *ngFor="let habit of habits$()" [ngClass]="getPriority(habit.priority)">
+        <div class="HabitLeft">
+          <p id="HabitTitle">{{ habit.name ?? 'No name available' }}</p>
+          <p id="HabitDesc">{{ habit.desc ?? 'No description available' }}</p>
+        </div>
+        <div class="HabitRight">
+          <div id="StreakBox">{{habit.currentStreak}} / {{habit.goalStreak}}</div>
+          <div class="Buttons">
+            <button id="Add" (click)="AddStreak(habit._id, habit.currentStreak)">+</button>
+            <button id="Broke" (click)="deleteHabit(habit._id)">x</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="Right" *ngIf="!showForm">
+    <div id="Text">
+      <p id="White">Your</p>
+      <p id="Title">Good</p>
+      <p id="White">Habits</p>
+      <div id="RightButtons">
+        <div id="AddHabit">
+          <button id="AddHabitButton" (click) = "addHabit()" >Add Habit</button>
+        </div>
+        <div id="Toggle">
+          <label class="toggle-switch">
+            <input type="checkbox" [(ngModel)]="isGood" (change)="toggleSwitch()" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="Form" *ngIf="showForm">
+      <form id="FormBG" (ngSubmit)="submitHabit()">
+        <label class="Labels">Name:</label>
+        <input type="text" name="name" [(ngModel)]="name" required><br><br>
+
+        <label class="Labels">Description:</label>
+        <input type="text" name="description" [(ngModel)]="description"><br><br>
+
+        <label class="Labels">Goal Streak:</label>
+        <input type="number" name="goal_streak" [(ngModel)]="goalStreak" required><br><br>
+
+        <label class="Labels">Type:</label>
+        <div class="type-checkbox-group">
+          <div class="type-checkbox good" [class.selected]="type === 'Good'" (click)="setType('Good')">
+            <input type="checkbox" [checked]="type === 'Good'" style="display:none;" />
+            <span class="custom-checkbox"></span>
+            Good
+          </div>
+          <div class="type-checkbox bad" [class.selected]="type === 'Bad'" (click)="setType('Bad')">
+            <input type="checkbox" [checked]="type === 'Bad'" style="display:none;" />
+            <span class="custom-checkbox"></span>
+            Bad
+          </div>
+        </div>
+        
+
+        <label class="Labels">Priority:</label>
+        <div class="priority-checkbox-group">
+          <div class="priority-checkbox low" [class.selected]="priority === 'Low'" (click)="setPriority('Low')">
+            <input type="checkbox" [checked]="priority === 'Low'" style="display:none;" />
+            <span class="custom-checkbox"></span>
+            Low
+          </div>
+          <div class="priority-checkbox medium" [class.selected]="priority === 'Medium'" (click)="setPriority('Medium')">
+            <input type="checkbox" [checked]="priority === 'Medium'" style="display:none;" />
+            <span class="custom-checkbox"></span>
+            Medium
+          </div>
+          <div class="priority-checkbox high" [class.selected]="priority === 'High'" (click)="setPriority('High')">
+            <input type="checkbox" [checked]="priority === 'High'" style="display:none;" />
+            <span class="custom-checkbox"></span>
+            High
+          </div>
+        </div>
+        
+
+        <div id="Controls">
+          <input type="submit" value="Submit">
+          <button id="Cancel" type="button" (click) = "cancelButton()">
+            <span class="material-symbols-outlined">undo</span>
+          </button>
+        </div>        
+      </form>
+    </div>
+  
+
+  <!-- No tasks found if its empty -->

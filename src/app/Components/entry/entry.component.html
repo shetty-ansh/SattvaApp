@@ -1,0 +1,18 @@
+<div id="Background">
+    <div id="Entry">
+        <div id="EntryHeading">
+            {{entry()?.title}}
+        </div>
+        <div id="EntryDate">{{entry()?.date | date: 'medium'}}</div>
+        <div id="EntryContent">
+            {{entry()?.desc}}
+        </div>
+        <div class="Controls">
+            <button class="Controls" id="EditButton"><span class="material-symbols-outlined">edit</span></button>
+            <button class="Controls" id="FavouriteButton"><span class="material-symbols-outlined">favorite</span></button>
+            <button class="Controls" id="DeleteButton"><span class="material-symbols-outlined">delete</span></button>
+        </div>
+    </div>
+</div>
+
+<!-- (click)="router.navigate(['/journal'])" -->

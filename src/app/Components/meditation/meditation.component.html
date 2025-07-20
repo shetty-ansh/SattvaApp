@@ -1,0 +1,43 @@
+<div class="meditation-container" style="position: relative;">
+  <div id = "BG-Line" style="position: absolute">
+  </div>
+    <div class="meditation-header" style="position: relative; z-index: 1;">
+      <h1> Meditation</h1>
+    <p>Time for you to take a break</p>
+    <div class="gif-container" style="position: relative; z-index: 1;">
+      <img src="assets/images/ChakrasTransparent.gif" alt="Meditation GIF">
+    </div>
+</div>
+
+  <div class="meditation-content">
+    <div class="meditation-card"> 
+      <div class="breathing-guide">
+        <div class="breathing-circle" [class.breathing]="isBreathing">
+          <span class="time" id="timer" style="font-size: 5rem; font-weight: bold;">{{ minutes < 10 ? '0' + minutes : minutes }}:{{ seconds < 10 ? '0' + seconds : seconds }}</span>
+        </div>
+        <!-- <p class="breathing-text">Breathe {{ isBreathing ? 'In' : 'Out' }}</p> -->
+      </div>
+
+      <div class="timer-controls">
+      </div>
+      
+      <div class="meditation-controls">
+        <button class="option-btn" (click)="setDuration(5)">
+          5 min
+        </button>
+        <button class="option-btn"  (click)="setDuration(10)">
+          10 min
+        </button>
+        <button class="timer-btn" (click)="toggleClock()">
+          <span class="material-icons">{{ isRunning ? 'pause' : 'play_arrow' }}</span>
+        </button>
+        <button class="option-btn" (click)="setDuration(15)">
+          15 min
+        </button>
+        <button class="option-btn" (click)="setDuration(20)">
+          20 min
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,136 @@
+#Background
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #dcb175 0%, #fcb69f  50%, #ffe880 100%);
+    /* background-color: rgba(255, 255, 255, 0.646);  */
+    backdrop-filter: blur(15px);
+    margin: -100px 0px 0px 0px;
+    /* -webkit-background-clip: border-box; */
+
+}
+
+#Entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #feeca5;
+  border: 1px solid #ffe065;
+  border-radius: 20px;
+  margin-top: 120px;
+  width: 900px;
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 4px 150px rgba(0, 0, 0, 0.1),
+              0 8px 160px rgba(0, 0, 0, 0.1),
+              2px 0 2px rgba(0, 0, 0, 0.05),
+              -2px 0 2px rgba(0, 0, 0, 0.05);
+}
+
+#Entry {
+  padding-right: 5px; /* pushes content away so scrollbar moves left */
+  position: relative;
+}
+
+#Entry::-webkit-scrollbar {
+  width: 15px;
+}
+
+#Entry::-webkit-scrollbar-track {
+  background: #ffe9b3;
+  border-radius: 10px;
+  margin: 10% 0; /* top & bottom margins to reduce height */
+}
+
+#Entry::-webkit-scrollbar-thumb {
+  background-color: #ffcc60;
+  border-radius: 10px;
+  border: 2px solid #ffe9b3;
+}
+
+
+
+#EntryHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  font-size: clamp(30px, 5vw, 55px);
+  font-weight: bold;
+  color: #543225;
+  text-align: center;
+  text-wrap: balance;
+}
+
+
+#EntryContent {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 50px 30px 50px;
+  font-size: large;
+  gap: 20px;
+  line-height: 1.6;
+}
+
+
+#EntryDate{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    color: #9e5f46;
+    background-color: transparent;
+    margin-bottom: 20px;
+
+}
+
+.Controls {
+  margin: 10px 0 25px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color: transparent;
+  padding: 10px;
+  border: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#EditButton{
+    background-color: #2196F3;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+#EditButton:hover{
+    background-color: #065ea6;
+}
+
+#FavouriteButton{
+    background-color: #FFC107;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+#FavouriteButton:active{
+    background-color: #d49f00;
+}
+
+#DeleteButton{
+background-color: #F44336;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+#DeleteButton:hover{
+    background-color: #ba0c00;
+}
